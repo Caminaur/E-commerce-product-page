@@ -194,7 +194,7 @@ img{
   color: white;
   border-radius: 30%;
   background-color: var(--primary-orange);
-  display: var(--display);
+  display: none;
 }
 
 .container{
