@@ -17,11 +17,28 @@
 </head>
 <body>
 
+  <div class="mobile-menu" data-active="false">
+    <img class="menu-close" id="menu-close" src="images/icon-close.svg" alt="">
+    <ul>
+      <li class="nav-item"><a href="#">Collections</a></li>
+      <li class="nav-item"><a href="#">Men</a></li>
+      <li class="nav-item"><a href="#">Women</a></li>
+      <li class="nav-item"><a href="#">About</a></li>
+      <li class="nav-item"><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="off-layer"></div>
+
   <div id="lightbox" data-status="inactive">
     <div class="lightbox-container">
-      <img class="prev" id="prev" src="images/icon-previous.svg" alt="">
+      <div class="prev" id="prev-lightbox">
+        <img class=""  src="images/icon-previous.svg" alt="">
+      </div>
+      <div class="next" id="next-lightbox">
+        <img class="" src="images/icon-next.svg" alt="">
+      </div>
       <img class="lightbox-image" id="lightbox-image" src="images/image-product-1.jpg" alt="">
-      <img class="next" id="next" src="images/icon-next.svg" alt="">
+      <img class="close" id="lightbox-close" src="images/icon-close.svg" alt="">
     </div>
     <div class="row">
       <div class="product-image-mini">
@@ -41,13 +58,14 @@
 
   <div class="navbar">
     <div class="nav-left">
+      <img src="images/icon-menu.svg" id="menu-btn" alt="">
       <img src="images/logo.svg" alt="" class="icon">
       <ul>
-        <li class="nav-item">Collections</li>
-        <li class="nav-item">Men</li>
-        <li class="nav-item">Women</li>
-        <li class="nav-item">About</li>
-        <li class="nav-item">Contact</li>
+        <li class="nav-item"><a href="#">Collections</a></li>
+        <li class="nav-item"><a href="#">Men</a></li>
+        <li class="nav-item"><a href="#">Women</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
     </div>
     <div class="nav-right">
@@ -58,7 +76,11 @@
 
   <div class="container">
     <div class="product-images">
-      <img src="images/image-product-1.jpg" alt="" id="mainImage" class="main">
+      <div class="main-image-container">
+        <img class="prev" id="prev" src="images/icon-previous.svg" alt="">
+        <img src="images/image-product-1.jpg" alt="" id="mainImage" class="main">
+        <img class="next" id="next" src="images/icon-next.svg" alt="">
+      </div>
       <div class="row">
         <div class="product-image-mini">
           <img src="images/image-product-1-thumbnail.jpg" alt="" class="thumbnail" data-image-selected=true id="1">
@@ -79,11 +101,13 @@
       <p class="title">Fall Limited Edition Sneakers</p>
       <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
 durable rubber outer sole, they'll withstand everything the weather can offer.</p>
-      <div class="row">
-        <p class="price-with-discount">$125.00</p>
-        <p class="discount">50%</p>
+      <div class="prices-mobile">
+        <div class="row">
+          <p class="price-with-discount">$125.00</p>
+          <p class="discount">50%</p>
+        </div>
+        <p class="original-price">$250.00</p>
       </div>
-      <p class="original-price">$250.00</p>
       <div class="row-spaced">
         <div class="row buttons">
           <button class="minus"  id="minus">
@@ -97,8 +121,10 @@ durable rubber outer sole, they'll withstand everything the weather can offer.</
           </button>
         </div>
         <div class="btn-cart">
-          <img class="cart-icon" src="images/icon-cart.svg" alt="">
-          <button type="button" id="addToCart" class="">Add to cart</button>
+          <button type="button" id="addToCart" class="">
+            <img class="cart-icon" src="images/icon-cart.svg" alt="">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
