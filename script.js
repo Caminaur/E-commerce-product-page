@@ -24,6 +24,10 @@
   const cartDiv = document.querySelector('.cart');
   const addToCart = document.getElementById('addToCart');
 
+  // .cart-logo::after
+  const cartLogo = document.getElementById('cart-logo');
+  const cartLogoAfter = window.getComputedStyle(cartLogo,'::after');
+  
   cart.addEventListener('click',()=>{
     cartDiv.dataset.dropdown = cartDiv.dataset.dropdown==='active' ? 'inactive' : 'active';
   });
@@ -169,6 +173,8 @@
     let cartContent = document.querySelector('.cart .content');
     
     cartContent.innerHTML = '';
+
+    let cartCounter = document.querySelector('.cart-counter');
     
     let title = document.querySelector('.product-description .title').innerHTML;
     let price = parseInt(document.querySelector('.product-description .price-with-discount').innerHTML.replace('$',''));
@@ -214,12 +220,17 @@
     cartProduct.appendChild(deleteBtn);
     cartContent.appendChild(cartProduct);
 
+    cartLogo.style.setProperty('--display','block');
+    cartCounter.innerHTML = amountProduct;
+    
     deleteBtn.addEventListener('click',()=>{
       cartContent.innerHTML ='';
       document.getElementById('checkout').parentElement.style.display='none';
       pempty = document.createElement('p');
       pempty.classList.add('empty-cart-message');
       pempty.innerHTML = 'Your cart is empty';
+      cartLogo.style.setProperty('--display','none');
+      cartCounter.innerHTML = amountProduct;
       cartContent.appendChild(pempty);
     });
 
