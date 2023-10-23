@@ -69,8 +69,19 @@
       </ul>
     </div>
     <div class="nav-right">
-      <img src="images/icon-cart.svg" alt="" class="cart-logo">
+      <img src="images/icon-cart.svg" alt="" class="cart-logo" id="cart">
       <img src="images/image-avatar.png" alt="" class="profile-pic">
+      <div class="cart" data-dropdown="inactive">
+        <p class="cart-title">Cart</p>
+        <div class="content">
+          <p class="empty-cart-message">Your cart is empty</p>
+        </div>
+        <div class="btn-cart">
+          <button type="button" id="checkout" class="">
+            Checkout
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
